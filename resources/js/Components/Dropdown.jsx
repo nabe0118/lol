@@ -4,7 +4,7 @@ import React, { useState, useContext, Fragment } from 'react'
 
 const DropDownContext = React.createContext()
 
-function Dropdown({ children }) {
+const Dropdown = ({ children }) => {
   const [open, setOpen] = useState(false)
 
   const toggleOpen = () => {
@@ -18,7 +18,7 @@ function Dropdown({ children }) {
   )
 }
 
-function Trigger({ children }) {
+const Trigger = ({ children }) => {
   const { open, setOpen, toggleOpen } = useContext(DropDownContext)
 
   return (
@@ -32,12 +32,12 @@ function Trigger({ children }) {
   )
 }
 
-function Content({
+const Content = ({
   align = 'right',
   width = '48',
   contentClasses = 'py-1 bg-white',
   children,
-}) {
+}) => {
   const { open, setOpen } = useContext(DropDownContext)
 
   let alignmentClasses = 'origin-top'
@@ -79,18 +79,16 @@ function Content({
   )
 }
 
-function DropdownLink({ href, method = 'post', as = 'a', children }) {
-  return (
-    <Link
-      href={href}
-      method={method}
-      as={as}
-      className="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
-    >
-      {children}
-    </Link>
-  )
-}
+const DropdownLink = ({ href, method = 'post', as = 'a', children }) => (
+  <Link
+    href={href}
+    method={method}
+    as={as}
+    className="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+  >
+    {children}
+  </Link>
+)
 
 Dropdown.Trigger = Trigger
 Dropdown.Content = Content
