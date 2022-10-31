@@ -29,6 +29,7 @@ export default function Card() {
           <p className="font-normal text-gray-700 dark:text-gray-400">
             紹介文が入ります
           </p>
+          <LikeIcon />
         </div>
         <img
           className="mb-3 ml-2 h-24 w-24 rounded-full shadow-lg"

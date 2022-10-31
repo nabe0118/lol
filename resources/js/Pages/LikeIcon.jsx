@@ -5,7 +5,6 @@ import { FcLikePlaceholder } from 'react-icons/fc'
 const LikeIcon = () => {
   const [isLike, setLike] = useState(true)
 
-  console.log(isLike)
   return (
     <>
       { isLike ?
@@ -18,8 +17,13 @@ const LikeIcon = () => {
           </div>
         </div>
         :
-        <div className="mt-2" >
-          <AiOutlineHeart />
+        <div className="mt-2">
+          <div className="flex">
+            <div className="pt-0.5" onClick={ () => setLike(!isLike) }>
+              <AiOutlineHeart />
+            </div>
+            <p className="ml-2" />
+          </div>
         </div>
       }
     </>
