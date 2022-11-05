@@ -32,18 +32,6 @@ const CardFrom = () => (
         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
         rows="3" />
     </label>
-    <div className="block">
-      <div className="mt-2">
-        <div>
-          <label className="inline-flex items-center">
-            <input type="checkbox"
-              className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              checked="" />
-            <span className="ml-2">Email me news and special offers</span>
-          </label>
-        </div>
-      </div>
-    </div>
   </form>
 
 )
